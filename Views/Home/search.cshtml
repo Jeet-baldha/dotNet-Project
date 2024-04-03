@@ -1,0 +1,28 @@
+﻿@model dynamic
+    <div class="inner-content">
+
+        <div class="movie-content">
+
+        @foreach (var movie in Model.results)
+        {
+               <div class="movie-card">
+                 <a asp-action="Movie" asp-controller="Home" asp-route-id=@movie.id><img src="https://image.tmdb.org/t/p/w500//@movie.poster_path" alt="game of throne" Poster" /></a>
+                  <div class="details">
+                    <div class="rating" style="font-size: 12px">
+                        @movie.vote_average
+                    </div>
+                    <h4 class="movie-name">
+                        @movie.title
+                    </h4>
+                    <p class="movie-date" style="font-size: 12px">
+                        @movie.release_date
+                    </p>
+                  </div>
+                </div>
+        }
+                    <h1 class="error-message" style="display: block; width: 500px; height: 32vh;"></h1>
+            </div>
+
+
+
+    </div>

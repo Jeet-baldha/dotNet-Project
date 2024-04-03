@@ -1,0 +1,309 @@
+﻿@{
+    ViewData["Title"] = "Movie Details";
+}
+
+
+
+<div class="background-image"></div>
+
+
+<section class="movie-container" style="background-image: url('https://image.tmdb.org/t/p/w500//@ViewBag.MovieDetails.backdrop_path');">
+
+
+    <div class="movie-details">
+
+        <div class="inner-content flex " id="movie-title-box">
+            <div>
+                <img id="poster-image" src="https://image.tmdb.org/t/p/w500//@ViewBag.MovieDetails.poster_path" alt="">
+            </div>
+
+            <div class="movie-overview  flex">
+
+                <h2>@ViewBag.MovieDetails.original_title</h2>
+                <ul class="flex" style="gap: 25px;">
+                    <li style="list-style-type: none;">@ViewBag.MovieDetails.release_date</li>
+                        <li>Science Fiction</li>
+                        <li>Romance</li>
+                        <li>Comedy</li>
+                </ul>       
+
+                   <div class="movie-icons flex">
+                  <div class="user-score flex">
+                    <div class="icon" style="margin: 0;">@ViewBag.MovieDetails.vote_average</div>
+                    <p style="padding: 8px;margin-right: 30px;">User Score</p>
+                </div>
+                <li class="icon" onclick="addMovie('792307')"><i class=" fa-solid fa-heart" aria-hidden="true"></i></li>
+            </div>
+
+            <div> 
+                <h4>Overview</h4>
+                <p class="overview-text">@ViewBag.MovieDetails.overview</p>
+            </div>
+
+            <div class="production-details flex">
+                <div class="">
+                    <h4>Greg Rucka</h4>
+                    <p>Screenplay, Story</p>
+                </div>
+                <div class="">
+                    <h4>Greg Rucka</h4>
+                    <p>Screenplay, Story</p>
+                </div>
+                <div class="">
+                    <h4>Greg Rucka</h4>
+                    <p>Screenplay, Story</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
+</section>
+
+
+<section class="inner-content">
+
+<div class="cast-list">
+
+    <h1>Top Billed Cast</h1>
+    <div class="column-content flex">
+
+
+
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//eWjkPYeXxPhE2F9J3Ui6E9OWVXy.jpg">
+
+                            <div class=" details">
+                                <h4>Emma Stone</h4>
+                                <p>Bella Baxter</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//5GilHMOt5PAQh6rlUKZzGmaKEI7.jpg">
+
+                            <div class=" details">
+                                <h4>Mark Ruffalo</h4>
+                                <p>Duncan Wedderburn</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//ui8e4sgZAwMPi3hzEO53jyBJF9B.jpg">
+
+                            <div class=" details">
+                                <h4>Willem Dafoe</h4>
+                                <p>Godwin Baxter</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//7ASVvzrU2cdhuIotzeKnqQVNNUM.jpg">
+
+                            <div class=" details">
+                                <h4>Ramy Youssef</h4>
+                                <p>Max McCandles</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//v1i5xodXbPw3blXYg4v0HmH3PGK.jpg">
+
+                            <div class=" details">
+                                <h4>Jerrod Carmichael</h4>
+                                <p>Harry Astley</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//4uGSSUdRl45HkAyW3CLM77GcK2V.jpg">
+
+                            <div class=" details">
+                                <h4>Christopher Abbott</h4>
+                                <p>Alfie Blessington</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//uoFKNAsKaN6Zk8sazzqRulfMt7Q.jpg">
+
+                            <div class=" details">
+                                <h4>Margaret Qualley</h4>
+                                <p>Felicity</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//1JT97VgV2l6jNpFeYXZ8SQu3BOr.jpg">
+
+                            <div class=" details">
+                                <h4>Suzy Bemba</h4>
+                                <p>Toinette</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//ni98cNE8kOAj6kcpEVmIfi8iAsw.jpg">
+
+                            <div class=" details">
+                                <h4>Kathryn Hunter</h4>
+                                <p>Swiney</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//fxH98JLkAYB2vSpo7bT5OHhoQ42.jpg">
+
+                            <div class=" details">
+                                <h4>Hanna Schygulla</h4>
+                                <p>Martha Von Kurtzroc</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//kosVS1yJJ60fG1rZRfGpgJmJt4n.jpg">
+
+                            <div class=" details">
+                                <h4>Vicki Pepperdine</h4>
+                                <p>Mrs. Prim</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//pIxIPFO8pq9IgzbZfnbURor1yKZ.jpg">
+
+                            <div class=" details">
+                                <h4>Jack Barton</h4>
+                                <p>Fop 1</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//bywWYXVpl9Y3v84uxMV6mxjsvcM.jpg">
+
+                            <div class=" details">
+                                <h4>Charlie Hiscock</h4>
+                                <p>Fop 2</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                        <img src="https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png">
+
+                            <div class=" details">
+                                <h4>Attila Dobai</h4>
+                                <p>Hapless Student</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//csJsSCYA0p3wD0K5N7u3DnF8JIM.jpg">
+
+                            <div class=" details">
+                                <h4>Emma Hindle</h4>
+                                <p>Woman with Kid in London Street</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                        <img src="https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png">
+
+                            <div class=" details">
+                                <h4>Anders Grundberg</h4>
+                                <p>Kid in London Street</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                        <img src="https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png">
+
+                            <div class=" details">
+                                <h4>Attila Kecskeméthy</h4>
+                                <p>Burly Guy</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                        <img src="https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png">
+
+                            <div class=" details">
+                                <h4>Jucimar Barbosa</h4>
+                                <p>Lisbon Doorman</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                            <img src="https://image.tmdb.org/t/p/w500//km0Cv1BbVd3hxS9N1XFeNNaDLPc.jpg">
+
+                            <div class=" details">
+                                <h4>Carminho</h4>
+                                <p>Fado Singing Woman</p>
+                            </div>
+                        </div>    
+
+
+                <div class="cast-card">
+
+                        <img src="https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png">
+
+                            <div class=" details">
+                                <h4>Angela Paula Stander</h4>
+                                <p>Arguing Woman</p>
+                            </div>
+                        </div>    
+
+
+                        <div class="view-more">
+                            <a href="#">View More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+
+    </div>
+
+    <h4 class="full-cast-link"><a href="#">Full Cast &amp; Crew</a></h4>
+    <hr>
+</div>
+</section>
+
+

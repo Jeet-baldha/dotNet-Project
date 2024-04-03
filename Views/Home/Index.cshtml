@@ -1,0 +1,207 @@
+﻿@model dynamic
+
+
+<section class="media-discover inner-content">
+  <div class="media-container">
+      <div class="title">
+        <h1>Welcome</h1>
+        <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
+      </div>
+
+      <div class="search">
+        <form id="search-form" method="get">
+          <input type="text" name="query" id="query" placeholder="search for Movie, TV show and person..." />
+          <button type="button" onclick="submitForm()">Search</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="trending inner-content">
+    <div class="column-container m-tb-5">
+      <div class="column-container-header flex">
+        <h1>Trending</h1>
+        <div class="selector flex" >
+          <div class="anchor today selected">
+            <a href="#" class="non-clickable">Today</a>
+          </div>
+          <div class="anchor week">
+            <a href="#" class="non-clickable">This week</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="column-content flex dayList">
+ 
+            @foreach (var movie in Model.TrendingMovies.results)
+            {
+              <div class="movie-card">
+              <a asp-action="Movie" asp-controller="Home" asp-route-id=@movie.id><img src="https://image.tmdb.org/t/p/w500//@movie.poster_path" alt="game of throne" Poster" /></a>
+              <div class="details">
+                <div class="rating" style="font-size: 12px">
+                            @movie.vote_average
+                </div>
+                <h4 class="movie-name">
+                  @movie.title
+                </h4>
+                <p class="movie-date" style="font-size: 12px">
+                  @movie.release_date
+                </p> 
+              </div>
+            </div>
+            }
+      </div>
+
+      <div class="column-content flex weekList">
+            @foreach (var movie in Model.PopularMovies.results)
+            {
+                      <div class="movie-card">
+                      <a asp-action="Movie" asp-controller="Home" asp-route-id=@movie.id><img src="https://image.tmdb.org/t/p/w500//@movie.poster_path" alt="game of throne" Poster" /></a>
+                      <div class="details">
+                        <div class="rating" style="font-size: 12px">
+                            @movie.vote_average
+                        </div>
+                        <h4 class="movie-name">
+                            @movie.title
+                        </h4>
+                        <p class="movie-date" style="font-size: 12px">
+                            @movie.release_date
+                        </p>
+                      </div>
+                    </div>
+            }
+      </div>
+    </div>
+  </section>
+
+  <section class="inner-content">
+
+    <div class="column-container">
+
+      <div class="latest-trailer">
+        <div class="column-container-header flex">
+          <h1 >Latest Trailers</h1>
+          <div class="selector flex">
+            <div class="anchor  selected">
+              <a href="#" class="non-clickable">Streming</a>
+            </div>
+            <div class="anchor ">
+              <a href="#" class="non-clickable">On tv</a>
+            </div>
+            <div class="anchor ">
+              <a href="#">For rent</a>
+            </div>
+            <div class="anchor " >
+              <a href="#" class="non-clickable">On theaters</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="column-content flex" styele="color:black">
+              <div class="trailer-card">
+               <iframe width="300" height="169" style="border-radius: 8px;" src="https://www.youtube.com/embed/e1k1PC0TtmE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                <div class="details">
+                  <div class="trailer-details">
+                    <h1>LAND OF BAD</h1>
+                    <h4></h4>
+                  </div>
+                </div>
+              </div><div class="trailer-card">
+               <iframe width="300" height="169" style="border-radius: 8px;" src="https://www.youtube.com/embed/m5buqYihMg8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                <div class="details">
+                  <div class="trailer-details">
+                    <h1>Asphalt city</h1>
+                    <h4></h4>
+                  </div>
+                </div>
+              </div><div class="trailer-card">
+               <iframe width="300" height="169" style="border-radius: 8px;" src="https://www.youtube.com/embed/JVTMtDsHMmU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                <div class="details">
+                  <div class="trailer-details">
+                    <h1>The first omen</h1>
+                    <h4></h4>
+                  </div>
+                </div>
+              </div><div class="trailer-card">
+               <iframe width="300" height="169" style="border-radius: 8px;" src="https://www.youtube.com/embed/hRFY_Fesa9Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                <div class="details">
+                  <div class="trailer-details">
+                    <h1>BAd Boys: Ride or die</h1>
+                    <h4></h4>
+                  </div>
+                </div>
+              </div><div class="trailer-card">
+               <iframe width="300" height="169" style="border-radius: 8px;" src="https://www.youtube.com/embed/ik0YSamIOtw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                <div class="details">
+                  <div class="trailer-details">
+                    <h1>X-men '97</h1>
+                    <h4></h4>
+                  </div>
+                </div>
+              </div><div class="trailer-card">
+               <iframe width="300" height="169" style="border-radius: 8px;" src="https://www.youtube.com/embed/1ZO0TGXw6SM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                <div class="details">
+                  <div class="trailer-details">
+                    <h1>MASHLE: MAGIC AND MUSCLES</h1>
+                    <h4></h4>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="popular inner-content">
+    <div class="column-container m-tb-5">
+      <div class="column-container-header flex">
+        <h1>What's Popular</h1>
+        <div class="selector flex">
+          <div class="anchor  selected">
+            <a href="#">Streming</a>
+          </div>
+          <div class="anchor ">
+            <a href="#">On tv</a>
+          </div>
+          <div class="anchor ">
+            <a href="#">For rent</a>
+          </div>
+          <div class="anchor ">
+            <a href="#">On theaters</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="popular column-content flex">
+            @foreach (var movie in Model.PopularMovies.results)
+            {
+                  <div class="movie-card">
+                  <a asp-action="Movie" asp-controller="Home" asp-route-id=@movie.id><img src="https://image.tmdb.org/t/p/w500//@movie.poster_path" alt="game of throne" Poster" /></a>
+                  <div class="details">
+                    <div class="rating" style="font-size: 12px">
+                            @movie.vote_average
+                    </div>
+                    <h4 class="movie-name">
+                            @movie.title
+                    </h4>
+                    <p class="movie-date" style="font-size: 12px">
+                            @movie.release_date
+                    </p>
+                  </div>
+                </div>
+            }
+      </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+</section>
+

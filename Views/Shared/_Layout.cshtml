@@ -1,0 +1,141 @@
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FillmyHub</title>
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/FillmyHub.styles.css" asp-append-version="true" /> *@
+    <script>
+        function submitForm() {
+            var query = document.getElementById("query").value;
+            if(query)
+                var url = `/Home/Search?query=${query}`;
+                window.location.href = url;
+            } else {
+                alert("Please enter a search query.");
+            }
+        }
+
+        document.getElementById("search-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+        });
+</script>
+</head>
+<body>
+      <nav>
+        <i class="fa-solid fa-bars" id="menu-btn"></i>
+        <i class="fa-solid fa-user" id="user-btn"></i>
+        <div class="navbar flex">
+            <div class="nav-left inner-content">
+
+                <ul class="flex nav-flex">
+
+                    <li class="nav-item" id="home-btn"><a class="nav-link" asp-action="Index" asp-controller="Home"><i class="fa-solid fa-house"></i></a></li>
+                    <i class="fa-solid fa-xmark" class="nav-link" id="close-btn"></i>
+      
+                    <li class="nav-item" id="home-btn"><a class="nav-link" asp-action="MovieList" asp-controller="Home">Movie</a></li>
+                    <li class="nav-item" id="home-btn"><a class="nav-link" asp-action="Watchlist" asp-controller="Home">Watchlist</a></li>
+
+                </ul>
+            </div>
+
+            <div class="nav-right">
+
+                <ul class="flex nav-flex inner-content">
+
+
+                     <li class="nav-item">
+                         <form action="/search" method="get">
+                             <input type="text" name="query" class="search-text" placeholder="Search here...">
+                             <button type="submit" class="search-btn nav-item"><i class="fa-solid fa-magnifying-glass" id="search-icon"></i></button>
+                         </form>
+
+                     </li>
+                     <li class="nav-item">
+                        <i class="fa-solid fa-user" id="profile"></i>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="signup drop-down-box">
+
+        @if (!string.IsNullOrEmpty(Context.Session.GetString("name")))
+        {
+        <li class="drop-down-item">@Context.Session.GetString("name")</li>
+        <hr />
+        <li class="drop-down-item"><a asp-action="Logout" asp-controller="Home">Logout</a></li>
+        }
+        else
+        {
+        <li class="drop-down-item"><a asp-action="Signup" asp-controller="Home">Signup</a></li>
+        <hr />
+        <li class="drop-down-item"><a asp-action="Login" asp-controller="Home">Login</a></li>
+        }
+
+     </div>
+    @* <% if(isAuthenticated == true){ %>
+    <div class="signup drop-down-box">
+            <li class="drop-down-item"><a href="#"> <%= username %> </a></li><hr>
+            <li class="drop-down-item"><a href="/logout">Logout</a></li>
+    </div>
+    <% } else{ %>
+        <div class="signup drop-down-box">
+            <li class="drop-down-item"><a href="/signup">signup</a></li><hr>
+            <li class="drop-down-item"><a href="/login">Login</a></li>
+        </div>
+    <% } %>
+ *@
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+     <footer class="border-top footer text-muted">
+  <div class="footer-content flex">
+
+        <div class="personal-details">
+            <h1>FilmyHub.com</h1>
+            <div class="social-media-icon flex">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-discord"></i>
+            </div>
+        </div>
+        <ul>
+            <li class="fw-6">The Basic</li>
+            <li><a href="#">About FilmyHub</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Support Forms</a></li>
+        </ul>
+
+        <ul>
+            <li class="fw-6">Legal</li>
+            <li><a href="#">Terms & Condition</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Report</a></li>
+        </ul>
+    </div>
+
+    </footer> 
+
+   
+
+
+<script src="https://kit.fontawesome.com/7eb91cefb3.js" crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
